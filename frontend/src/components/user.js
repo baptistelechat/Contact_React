@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+
 
 class user extends Component {
     state = {
@@ -16,9 +21,21 @@ class user extends Component {
     
       render() {
         return (
-          <ul>
-            { this.state.users.map(users => <li>{users.firstName} {users.lastName}</li>)}
-          </ul>
+          <div>
+            {
+              this.state.users.map(users => {
+                return(
+                  <ListItem button>
+                    <ListItemIcon>
+                    <PeopleAltIcon />
+
+                    </ListItemIcon>
+                    <ListItemText primary={users.firstName+' '+users.lastName}/>
+                  </ListItem>
+                )
+              })
+            } 
+          </div>
         )
       }
 }
