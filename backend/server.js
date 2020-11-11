@@ -1,14 +1,14 @@
 const express = require('express');
 const chalk = require('chalk');
-const faker = require('faker');
 const bodyParser = require('body-parser');
 const {User} = require('./models')
+const cors = require('cors')
 
 const app = express();
 const port = 8000;
 
-// * List Users
-const users = [];
+app.use(cors());
+
 // * Create version of API
 const apiVersion = '/api/v1';
 // * parse application/x-www-form-urlencoded
