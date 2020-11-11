@@ -5,7 +5,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
-
 class user extends Component {
     state = {
         users: []
@@ -27,8 +26,7 @@ class user extends Component {
                 return(
                   <ListItem button>
                     <ListItemIcon>
-                    <PeopleAltIcon />
-
+                      <PeopleAltIcon />
                     </ListItemIcon>
                     <ListItemText primary={users.firstName+' '+users.lastName}/>
                   </ListItem>
